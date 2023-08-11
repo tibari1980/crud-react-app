@@ -79,19 +79,20 @@ function Products() {
         <div className='card p-1'>
            <div className='card-headers'><FontAwesomeIcon icon={faSearchPlus}></FontAwesomeIcon> Search by key :</div>
            <div className='card-body'>
-            <div className='row g-2'>
-              <form onSubmit={handleSearchProduct}>
-              <div className='col-auto'>
-                  <input type="text" 
-                  value={motCle}
-                  onChange={(e)=>setMotCle(e.target.value)}
-                  
-                  className="form-control"  placeholder='Veuillez saisir ce que vous voulez...'/>
-              </div>
-              <div className='col-auto'>
-                <button className='btn btn-success btn-m'><FontAwesomeIcon icon={faSearch}></FontAwesomeIcon></button>
-              </div>
-              </form>
+            <div className='row'>
+              
+              <form onSubmit={handleSearchProduct} >
+  <div className="row">
+    <div className="col">
+    <input type="text"  value={motCle} onChange={(e)=>setMotCle(e.target.value)}
+                  className="form-control"  placeholder='Search...'/>
+    </div>
+    <div className="col">
+    <button className='btn btn-success'><FontAwesomeIcon icon={faSearch}></FontAwesomeIcon></button>
+    </div>
+  </div>
+</form>
+
             </div>
 
           </div>

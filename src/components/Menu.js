@@ -6,6 +6,7 @@ import Products from './Products';
 import Home from './Home';
 import AddProduct from './AddProduct';
 import EditProduct from './EditProduct';
+import Employee from './employee/Employee';
 
 function Menu() {
 
@@ -36,7 +37,19 @@ function Menu() {
               <Link
               onClick={()=>setCurrentRoute("listProduct")} 
               className={currentRoute==='listProduct'? 'nav-link joinBtn':'nav-link'} 
-              to={"/listProduct"}><FontAwesomeIcon icon={faListCheck}></FontAwesomeIcon> All Product</Link>
+              to={"/listProduct"}><FontAwesomeIcon icon={faListCheck}>
+                </FontAwesomeIcon>Product</Link>
+            </li>
+            <li className='nav-item'>
+              <Link
+               onClick={()=>setCurrentRoute("listEmployee")}
+               className={currentRoute==='listEmployee'? "nav-link joinBtn":"nav-link"}
+               to={"/listEmployee"}>
+              <FontAwesomeIcon icon={faListCheck}>
+
+              </FontAwesomeIcon>
+              Employees</Link>
+
             </li>
           </ul>
         </div>
@@ -49,6 +62,8 @@ function Menu() {
         <Route path='/addProduct' element={<AddProduct />}>Add Product</Route>
         <Route path='/' element={<Home/>} >Home</Route>
         <Route path='/editProduct/:id' element={<EditProduct/>} ></Route>
+        /** Gestion Employee */
+        <Route path='/listEmployee' element={<Employee/> }></Route>
       </Routes>
     </BrowserRouter>
 
